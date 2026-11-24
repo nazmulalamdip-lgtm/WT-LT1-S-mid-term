@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Cafeteria Pre-Order</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    
+    .topnav {
+      background-color: #222;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .topnav a.contact {
+      float: right;
+    }
+
+    .topnav a:hover {
+      background-color: #555;
+      color: #fff;
+    }
+
+    .topnav a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    .topnav a.active:hover {
+      background-color: #038e5b;
+      color: white;
+    }
+
+   
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      color: #b85d19;
+      margin-top: 28px;
+    }
+
+    
+    .card {
+      position: relative;
+      width: 450px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 3px solid #333;
+      border-radius: 12px;
+      background-color: #fffbe6;
+      box-shadow: 5px 5px 10px gray;
+      box-sizing: border-box;
+    }
+
+    .card:hover {
+      box-shadow: 8px 8px 16px gray;
+    }
+
+    .card > h2 {
+      color: orange;
+      margin-top: 0;
+    }
+
+    .card p {
+      font-style: italic;
+    }
+
+    .card li {
+      font-weight: bold;
+    }
+
+    .badge {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    /* Requirement 7 - 10: Form styling */
+    form {
+      max-width: 520px;
+      margin: 0 auto 50px auto;
+    }
+
+    fieldset {
+      padding: 20px;
+      border: 1px solid #999;
+      border-radius: 6px;
+      background-color: #fafafa;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 8px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label.field-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="time"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #888;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    input:focus,
+    textarea:focus {
+      background-color: #ffffcc;
+      outline: 2px solid #e6b800;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      margin-right: 12px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .btn-group {
+      margin-top: 18px;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="topnav">
+    <a href="#menu">Menu</a>
+    <a href="#offers">Offers</a>
+    <a href="#order" class="active">Order</a>
+    <a href="#contact" class="contact">Contact</a>
+  </div>
+
+  
+  <h1>Campus Cafeteria</h1>
+
+  <!-- Offer Card -->
+  <div class="card">
+    <span class="badge">50% OFF</span>
+    <h2>Today's Special</h2>
+    <p>Pre-order before 11:00 AM and collect your meal from the counter without waiting in the queue.</p>
+    <ul>
+      <li>Chicken Biryani</li>
+      <li>Vegetable Khichuri</li>
+      <li>Egg Sandwich</li>
+    </ul>
+  </div>
+
+  
+  <form id="order" action="#" method="post">
+    <fieldset>
+      <legend>Order Your Meal</legend>
+
+      <div class="form-group">
+        <label class="field-label" for="fullName">Full Name:</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          required
+          minlength="3"
+          maxlength="40"
+        >
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          pattern=".+@student\.aiub\.edu"
+          title="Please enter your AIUB student email (e.g., 22-xxxxx-1@student.aiub.edu)"
+        >
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="mobile">Mobile:</label>
+        <input
+          type="text"
+          id="mobile"
+          name="mobile"
+          placeholder="01712345678"
+          required
+          pattern="01[0-9]{9}"
+          title="Enter an 11-digit mobile number starting with 01"
+        >
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          required
+          min="1"
+          max="5"
+        >
+      </div>
+
+      <div class="form-group radio-group">
+        <span class="field-label">Meal Type:</span>
+        <input type="radio" id="mealBreakfast" name="mealType" value="Breakfast" required>
+        <label for="mealBreakfast">Breakfast</label>
+
+        <input type="radio" id="mealLunch" name="mealType" value="Lunch">
+        <label for="mealLunch">Lunch</label>
+
+        <input type="radio" id="mealSnacks" name="mealType" value="Snacks">
+        <label for="mealSnacks">Snacks</label>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="pickupCounter">Pickup Counter:</label>
+        <select id="pickupCounter" name="pickupCounter" required>
+          <option value="">Select a counter</option>
+          <option value="Counter 1">Counter 1</option>
+          <option value="Counter 2">Counter 2</option>
+          <option value="Counter 3">Counter 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="pickupTime">Pickup Time:</label>
+        <input
+          type="time"
+          id="pickupTime"
+          name="pickupTime"
+          required
+          min="11:00"
+          max="15:00"
+        >
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="instructions">Instructions:</label>
+        <textarea
+          id="instructions"
+          name="instructions"
+          rows="4"
+          maxlength="150"
+        ></textarea>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="confirmPickup" name="confirmPickup" required>
+        <label for="confirmPickup">I will collect my order on time</label>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit">Place Order</button>
+        <button type="reset">Clear</button>
+      </div>
+    </fieldset>
+  </form>
+
+</body>
+</html>
